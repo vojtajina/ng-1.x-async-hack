@@ -1,13 +1,28 @@
 // This is lazy loaded, when navigating to /list route.
 
-var list = angular.module('call me whatever', []);
-
-list.service('foo', function() {
-  this.name = 'foo';
-});
-
-list.controller('List', function($scope, foo) {
+angular.module('list', ['const'])
+.controller('List', function($scope, PIDay, name) {
   $scope.alert = function() {
-    alert(foo.name);
+    alert("It's " + PIDay + "!");
   };
-});
+  $scope.name = name;
+})
+.directive('hello', function(greeter, name) {
+  return function(scope, element) {
+    element.text(greeter.greet(name));
+  };
+})
+.filter('greet', function(greet) {
+  return function(value) {
+    return greet(value);
+  };
+})
+.factory('greet', function() {
+  return function (name) {
+    return "Hello " + name;
+  };
+})
+.service('greeter', function(greet) {
+  this.greet = greet;
+})
+.value('name', 'Matt');
