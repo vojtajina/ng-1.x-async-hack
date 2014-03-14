@@ -1,13 +1,18 @@
 <html>
-  <head>Angular v1.x hacked to lazy load code</head>
+  <head>
+    <title>Angular v1.x hacked to lazy load code</title>
+  </head>
   <body ng-app="app">
-    <a href="#/list">list</a>
+    <a href="#/">home</a>
     <a href="#/detail">detail</a>
+    <a href="#/list">list</a>
 
     <div ng-view></div>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-route/angular-route.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/const.js"></script>
+    <script src="./js/lazyLoad.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
