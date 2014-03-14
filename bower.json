@@ -1,0 +1,17 @@
+{
+  "name": "async-ng-1.x",
+  "version": "0.0.0",
+  "authors": [
+    "Vojta Jina <vojta.jina@gmail.com>"
+  ],
+  "keywords": [
+    "angular",
+    "lazy"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-route": "~1.2.14",
+    "angular": "~1.2.14"
+  }
+}
