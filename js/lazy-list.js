@@ -6,7 +6,10 @@ list.service('foo', function () {
     this.name = 'foo';
 });
 
-list.controller('List', function ($scope, foo, lazyService) {
+list.controller('List', function ($scope, foo, lazyService, $route) {
+    $scope.message = 'some initial text';
+    $scope.route = $route;
+
     $scope.alert = function () {
         alert(foo.name);
         alert(lazyService.first);

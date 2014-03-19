@@ -1,25 +1,10 @@
 var app = angular.module('app', ['ngRoute']);
 
-var __alreadyLoading = {};
-// TODO(vojta): probably use RequireJS for this.
-
 function lazyLoad(path) {
     return function ($q) {
-        if (!__alreadyLoading[path]) {
-            var d = $q.defer();
-            var s = document.createElement('script');
-
-            s.src = path;
-            s.onload = function () {
-                d.resolve();
-            };
-
-            document.body.appendChild(s);
-
-            __alreadyLoading[path] = d.promise;
-        }
-
-        return __alreadyLoading[path];
+        var d = $q.defer();
+        require([path], d.resolve);
+        return d.promise;
     };
 }
 
