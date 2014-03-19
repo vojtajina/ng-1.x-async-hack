@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "angular-route": "~1.2.14",
-    "angular": "~1.2.14"
+      "angular": "~1.2.14",
+      "requirejs": "~2.1.11"
   }
 }
